@@ -16,6 +16,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Create local.properties
+        run: echo "sdk.dir=/usr/local/lib/android/sdk" > local.properties
       - name: Accept Android licenses
         run: yes | sdkmanager --licenses || true
       - name: Grant execute permission
